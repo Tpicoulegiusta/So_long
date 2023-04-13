@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/12 17:30:22 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:30:44 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ int	ft_check_map(char **argv)
 		tabtab = ft_split(tab, '\n');
 		tab2 = get_next_line(map);
 		tab = ft_strjoin(tab, tab2);
-		printf ("tab ====> %s", tab);
-	}	
+		//printf ("tab ====> %s", tab);
+	}
+	if (ft_check_rectangle(tabtab) != 0)
+		return (1);
 	printf ("\ntabtab ====> %s\n", tabtab[0]);
 	printf ("tabtab ====> %s\n", tabtab[1]);
 	printf ("tabtab ====> %s\n", tabtab[2]);

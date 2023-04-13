@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/12 17:13:15 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:30:15 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	**ft_countj(char **tabtab, char *s, char c);
 int		ft_counti(char *s, char c);
 char	*ft_substr(char *s, int start, int len);
 char	*ft_strdup(char *source);
+int		ft_check_rectangle(char **tabtab);
 
 #endif
