@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/13 12:30:44 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:26:14 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,14 @@ int	ft_openfile(char **argv)
 
 int	ft_check_map(char **argv)
 {
+	t_map	*value;
 	int		map;
 	char	*tab;
 	char	*tab2;
 	char	**tabtab;
+	int		k;
 
+	k = -1;
 	map = open(argv[1], O_RDONLY, 0777);
 	tab = get_next_line(map);
 	while (tab != '\0')
@@ -62,15 +65,17 @@ int	ft_check_map(char **argv)
 		tabtab = ft_split(tab, '\n');
 		tab2 = get_next_line(map);
 		tab = ft_strjoin(tab, tab2);
-		//printf ("tab ====> %s", tab);
+		k++;
 	}
 	if (ft_check_rectangle(tabtab) != 0)
 		return (1);
-	printf ("\ntabtab ====> %s\n", tabtab[0]);
-	printf ("tabtab ====> %s\n", tabtab[1]);
-	printf ("tabtab ====> %s\n", tabtab[2]);
-	printf ("tabtab ====> %s\n", tabtab[3]);
-	printf ("tabtab ====> %s\n", tabtab[4]);
-	printf ("tabtab ====> %s\n", tabtab[5]);
+	if (ft_check_inside(tabtab) != 0)
+		return (1);
+	if (ft_check_bounds(tabtab, k) != 0)
+		return (1);
+	if (ft_check_num_cara(tabtab) != 0)
+		return (1);
+	//if (ft_path_exist(tabtab) != 0)
+	//	return (1);
 	return (0);
 }

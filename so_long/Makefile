@@ -6,7 +6,7 @@
 #    By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 10:46:54 by tpicoule          #+#    #+#              #
-#    Updated: 2023/04/13 13:58:10 by tpicoule         ###   ########.fr        #
+#    Updated: 2023/04/17 13:41:29 by tpicoule         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME		= so_long
 SOURCES		= so_long.c \
 			  so_long_utils.c \
 			  so_long_utils_2.c \
+			  so_long_utils_3.c \
 			  get_next_line.c \
 			  ft_split.c \
 			  get_next_line_utils.c

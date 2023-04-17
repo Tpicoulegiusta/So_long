@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:52:12 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/12 14:34:47 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:18:51 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	main(int argc, char **argv)
 	if (ft_openfile(argv) != 0)
 		return (write(2, "Bad File\n", 9));
 	if (ft_check_map(argv) != 0)
-		return (write(2, "Map Erro\n", 9));
+		return (write(2, "Map Error\n", 10));
+		
 	return (0);
 }
