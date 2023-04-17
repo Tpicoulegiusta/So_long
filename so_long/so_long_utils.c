@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/17 18:43:53 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/17 18:56:31 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ int	ft_path_finding(t_map *value)
 
 	i = 0;
 	ft_replace_x(value);
-	
 
 	printf("tabtab =====> %s\n", value->tabtab[0]);
 	printf("tabtab =====> %s\n", value->tabtab[1]);
