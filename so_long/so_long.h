@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/17 15:22:56 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:34:57 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@
 typedef struct s_map
 {
 	char	**tabtab;
+	int		playerx;
+	int		playery;
+
 }	t_map;
 
 char	*ft_strjoin(char *s1, char *s2);
@@ -37,18 +40,20 @@ char	*get_next_line(int fd);
 char	*ft_substr2(char *s, int start, int end);
 int		ft_check_args(int argc, char **argv);
 int		ft_openfile(char **argv);
-int		ft_check_map(char **argv);
+int		ft_check_map(char **argv, t_map *value);
 char	**ft_split(char *s, char c);
 char	**ft_countj(char **tabtab, char *s, char c);
 int		ft_counti(char *s, char c);
 char	*ft_substr(char *s, int start, int len);
 char	*ft_strdup(char *source);
-int		ft_check_rectangle(char **tabtab);
-int		ft_check_inside(char **tabtab);
-int		ft_check_bounds(char **tabtab, int k);
-int		ft_check_num_cara(char **tabtab);
-int		check_e_p(char **tabtab);
-int		check_c(char **tabtab);
-int		ft_path_exist(char **tabtab);
+int		ft_check_rectangle(t_map *value);
+int		ft_check_inside(t_map *value);
+int		ft_check_bounds(t_map *value, int k);
+int		ft_check_num_cara(t_map *value);
+int		check_e_p(t_map *value);
+int		check_c(t_map *value);
+int		ft_left_right(t_map *value);
+int		ft_reduce_e_p(t_map *value, int i, int j);
+int		ft_path_finding(t_map *value);
 
 #endif
