@@ -6,13 +6,14 @@
 #    By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 10:46:54 by tpicoule          #+#    #+#              #
-#    Updated: 2023/04/17 13:41:29 by tpicoule         ###   ########.fr        #
+#    Updated: 2023/04/18 15:06:34 by tpicoule         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
 
 SOURCES		= so_long.c \
+			  checker_args.c \
 			  so_long_utils.c \
 			  so_long_utils_2.c \
 			  so_long_utils_3.c \

@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:40:01 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/17 18:31:56 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/18 14:48:13 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,51 @@ int	ft_check_bounds(t_map *value, int k)
 		return (1);
 	return (0);
 }
-/* 
-int	ft_path_exist(char **tabtab)
+
+void	ft_replace_x(t_map *value, char **tabtab2)
 {
 	int	i;
 	int	j;
 
-	i = 0;
-	j = 0;
-	while (tabtab[i])
+	i = value->playerx;
+	j = value->playery;
+	if (tabtab2[i][j] != '1')
+		tabtab2[i][j] = 'x';
+	if (tabtab2[i - 1][j] != '1')
+		tabtab2[i - 1][j] = 'x';
+	if (tabtab2[i + 1][j] != '1')
+		tabtab2[i + 1][j] = 'x';
+	if (tabtab2[i][j - 1] != '1')
+		tabtab2[i][j - 1] = 'x';
+	if (tabtab2[i][j + 1] != '1')
+		tabtab2[i][j + 1] = 'x';
+	else
+		return ;
+}
+
+char	**ft_virus(char **tabtab2)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (tabtab2[++i])
 	{
-		j = 0;
-		
+		j = -1;
+		while (tabtab2[i][++j])
+		{
+			if (tabtab2[i][j] == 'x')
+			{
+				if (tabtab2[i - 1][j] != '1')
+				tabtab2[i - 1][j] = 'x';
+				if (tabtab2[i + 1][j] != '1')
+					tabtab2[i + 1][j] = 'x';
+				if (tabtab2[i][j - 1] != '1')
+					tabtab2[i][j - 1] = 'x';
+				if (tabtab2[i][j + 1] != '1')
+					tabtab2[i][j + 1] = 'x';
+			}
+		}
 	}
-} */
+	return (tabtab2);
+}
