@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/18 15:05:05 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:26:12 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,13 +109,13 @@ int	ft_path_finding(t_map *value)
 	if (!tabtab2)
 		return (0);
 	tabtab2 = value->tabtab;
-/* 	printf("tabtab2 =====> %s\n", tabtab2[0]);
+ 	printf("tabtab2 =====> %s\n", tabtab2[0]);
 	printf("tabtab2 =====> %s\n", tabtab2[1]);
 	printf("tabtab2 =====> %s\n", tabtab2[2]);
 	printf("tabtab2 =====> %s\n", tabtab2[3]);
 	printf("tabtab2 =====> %s\n", tabtab2[4]);
 	printf("tabtab2 =====> %s\n", tabtab2[5]);
-
+/*
 	printf("\n======================\n\n");
 
 	printf("tabtab =====> %s\n", value->tabtab[0]);
@@ -127,25 +127,9 @@ int	ft_path_finding(t_map *value)
 	
 	printf("\n======================\n\n"); */
 
-	ft_replace_x(value, tabtab2);
-	ft_virus(tabtab2);
-/* 	
-	printf("tabtab2 =====> %s\n", tabtab2[0]);
-	printf("tabtab2 =====> %s\n", tabtab2[1]);
-	printf("tabtab2 =====> %s\n", tabtab2[2]);
-	printf("tabtab2 =====> %s\n", tabtab2[3]);
-	printf("tabtab2 =====> %s\n", tabtab2[4]);
-	printf("tabtab2 =====> %s\n", tabtab2[5]);
-
-	printf("\n======================\n\n");
-
-	printf("tabtab =====> %s\n", value->tabtab[0]);
-	printf("tabtab =====> %s\n", value->tabtab[1]);
-	printf("tabtab =====> %s\n", value->tabtab[2]);
-	printf("tabtab =====> %s\n", value->tabtab[3]);
-	printf("tabtab =====> %s\n", value->tabtab[4]);
-	printf("tabtab =====> %s\n", value->tabtab[5]); */
-	if (ft_check_path(tabtab2) != 0)
-		return (write(2, "path prob\n", 10));
+	//ft_replace_x(value, tabtab2);
+//	ft_virus(tabtab2);
+//	if (ft_check_path(tabtab2) != 0)
+	//	return (write(2, "path prob\n", 10));
 	return (0);
 }
