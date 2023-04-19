@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/18 16:26:12 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/19 15:29:16 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,8 @@ int	ft_check_map(char **argv, t_map *value)
 	int		map;
 	char	*tab;
 	char	*tab2;
-	int		k;
 
-	k = -1;
+	value->sizey = -1;
 	map = open(argv[1], O_RDONLY, 0777);
 	tab = get_next_line(map);
 	while (tab != '\0')
@@ -63,73 +62,15 @@ int	ft_check_map(char **argv, t_map *value)
 		value->tabtab = ft_split(tab, '\n');
 		tab2 = get_next_line(map);
 		tab = ft_strjoin(tab, tab2);
-		k++;
+		value->sizey++;
 	}
 	if (ft_check_rectangle(value) != 0)
 		return (1);
 	if (ft_check_inside(value) != 0)
 		return (1);
-	if (ft_check_bounds(value, k) != 0)
+	if (ft_check_bounds(value, value->sizey) != 0)
 		return (1);
 	if (ft_check_num_cara(value) != 0)
 		return (1);
-	return (0);
-}
-
-int	ft_check_path(char **tabtab2)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	j = 0;
-	k = 0;
-	while (tabtab2[i])
-	{
-		j = 0;
-		while (tabtab2[i][j])
-		{
-			if (tabtab2[i][j] == 'E' || tabtab2[i][j] == 'C')
-				return (1);
-		j++;
-		}
-	i++;
-	}
-	return (0);
-}
-
-int	ft_path_finding(t_map *value)
-{
-	int		i;
-	char	**tabtab2;
-
-	i = 0;
-	tabtab2 = malloc(sizeof(value->tabtab));
-	if (!tabtab2)
-		return (0);
-	tabtab2 = value->tabtab;
- 	printf("tabtab2 =====> %s\n", tabtab2[0]);
-	printf("tabtab2 =====> %s\n", tabtab2[1]);
-	printf("tabtab2 =====> %s\n", tabtab2[2]);
-	printf("tabtab2 =====> %s\n", tabtab2[3]);
-	printf("tabtab2 =====> %s\n", tabtab2[4]);
-	printf("tabtab2 =====> %s\n", tabtab2[5]);
-/*
-	printf("\n======================\n\n");
-
-	printf("tabtab =====> %s\n", value->tabtab[0]);
-	printf("tabtab =====> %s\n", value->tabtab[1]);
-	printf("tabtab =====> %s\n", value->tabtab[2]);
-	printf("tabtab =====> %s\n", value->tabtab[3]);
-	printf("tabtab =====> %s\n", value->tabtab[4]);
-	printf("tabtab =====> %s\n", value->tabtab[5]);
-	
-	printf("\n======================\n\n"); */
-
-	//ft_replace_x(value, tabtab2);
-//	ft_virus(tabtab2);
-//	if (ft_check_path(tabtab2) != 0)
-	//	return (write(2, "path prob\n", 10));
 	return (0);
 }

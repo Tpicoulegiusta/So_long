@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/18 15:09:21 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/19 13:42:31 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_map
 	char	**tabtab;
 	int		playerx;
 	int		playery;
+	int		sizey;
 
 }	t_map;
 
@@ -56,8 +57,12 @@ int		ft_left_right(t_map *value);
 int		ft_reduce_e_p(t_map *value, int i, int j);
 int		ft_path_finding(t_map *value);
 int		ft_check_path(char **tabtab2);
-char	**ft_virus(char **tabtab2);
-void	ft_replace_x(t_map *value, char **tabtab2);
 int		ft_all_checks(int argc, char **argv, t_map *value);
+void	ft_virus(char **copy, int x, int y);
+int		ft_parse_map(t_map *value, char **copy);
+void	ft_virus2(char **copy, int x, int y);
+
+/* char	**ft_virus(char **tabtab2);
+void	ft_replace_x(t_map *value, char **tabtab2); */
 
 #endif
