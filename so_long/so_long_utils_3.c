@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:40:01 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 15:25:46 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:34:53 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,16 @@ int	ft_reduce_e_p(t_map *value, int i, int j)
 	return (0);
 }
 
-int	ft_left_right(t_map *value)
+int	ft_left_right(t_map *value, int j)
 {
 	int	i;
 
 	i = 0;
 	while (value->tabtab[i])
 	{
-		if (value->tabtab[i++][0] != '1'
-			|| value->tabtab[i][ft_strlen(value->tabtab[i])])
+		printf("j ====> %c\n", value->tabtab[i][j]);
+		write (1, "caca1\n", 6);
+	 	if (value->tabtab[i][0] != '1' || value->tabtab[i][j] != '1')
 			return (1);
 		i++;
 	}
@@ -76,8 +77,8 @@ int	ft_check_bounds(t_map *value, int k)
 			return (1);
 		j++;
 	}
-	j = 0;
-	if (ft_left_right(value) != 0)
+	if (ft_left_right(value, j - 1) != 0)
 		return (1);
+	write (1, "caca1\n", 6);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:52:12 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 15:46:51 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/19 15:56:36 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 //#include "mlx.h"
 //#include "unistd.h"
 
-/* void	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-} */
+}
 
 int	deal_key(int key, void *param)
 {
+	(void)param;
+	if (key == 53)
+		exit(0);
 	ft_putchar('X');
 	return (0);
 }
@@ -52,7 +55,6 @@ int	main(int argc, char **argv)
 	mlx_pixel_put(mlx_ptr, win_ptr, 250, 250, 0xFFFFFF);
 	mlx_key_hook(win_ptr, deal_key, (void *)0);
 	mlx_loop(mlx_ptr);
-	
 /* 	printf("tabtab====> %s\n", value->tabtab[0]);
 	printf("tabtab====> %s\n", value->tabtab[1]);
 	printf("tabtab====> %s\n", value->tabtab[2]);

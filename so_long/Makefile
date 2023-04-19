@@ -6,7 +6,7 @@
 #    By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 10:46:54 by tpicoule          #+#    #+#              #
-#    Updated: 2023/04/19 15:37:48 by tpicoule         ###   ########.fr        #
+#    Updated: 2023/04/19 15:56:55 by tpicoule         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,14 @@ SOURCES		= so_long.c \
 OBJECTS		= ${SOURCES:.c=.o}
 RM			= rm -f
 CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror -Lmlx -lmlx -framework OpenGL -framework AppKit
+CFLAGS		= -Wall -Wextra -Werror
+MLX			= -lmlx -framework OpenGL -framework AppKit
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: 	${OBJECTS}
+	${CC} ${CFLAGS} ${MLX} ${OBJECTS} -o ${NAME}
 
 all:		${NAME}
 

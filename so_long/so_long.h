@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 13:42:31 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:24:52 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_check_bounds(t_map *value, int k);
 int		ft_check_num_cara(t_map *value);
 int		check_e_p(t_map *value);
 int		check_c(t_map *value);
-int		ft_left_right(t_map *value);
+int		ft_left_right(t_map *value, int j);
 int		ft_reduce_e_p(t_map *value, int i, int j);
 int		ft_path_finding(t_map *value);
 int		ft_check_path(char **tabtab2);
