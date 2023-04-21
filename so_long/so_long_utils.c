@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 18:13:53 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/20 08:56:59 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int	ft_reduce_check(t_map *value, int k)
 		return (1);
 	if (ft_check_bounds(value, value->sizey) != 0)
 		return (1);
-//	write (1, "caca1\n", 6);
 	if (ft_check_num_cara(value) != 0)
 		return (1);
 	return (0);
@@ -85,16 +84,5 @@ int	ft_check_map(char **argv, t_map *value)
 	}
 	if (ft_reduce_check(value, k) != 0)
 		return (1);
-/* 	if (value->sizey <= 3)
-		return (1);
-	if (ft_check_rectangle(value) != 0)
-		return (1);
-	write (1, "caca2\n", 6);
-	if (ft_check_inside(value) != 0)
-		return (1);
-	if (ft_check_bounds(value, value->sizey) != 0)
-		return (1);
-	if (ft_check_num_cara(value) != 0)
-		return (1); */
 	return (0);
 }

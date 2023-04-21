@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:23:20 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 17:44:22 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/20 09:06:56 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_check_rectangle(t_map *value)
 			return (write(2, "error not a rectangle\n", 22));
 		i++;
 	}
+	value->sizex = j;
 	return (0);
 }
 
@@ -45,11 +46,7 @@ int	ft_check_inside(t_map *value)
 			if (value->tabtab[i][j] != '0' && value->tabtab[i][j] != '1'
 				&& value->tabtab[i][j] != 'C' && value->tabtab[i][j] != 'E'
 					&& value->tabtab[i][j] != 'P')
-			{
-				printf("tabtab[i][j] ====> %c\n", value->tabtab[i][j]);
-				write (1, "caca\n", 5);
 				return (1);
-			}
 			j++;
 		}
 		i++;

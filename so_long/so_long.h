@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 18:24:52 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/21 14:41:13 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,25 @@ typedef struct s_map
 	int		playerx;
 	int		playery;
 	int		sizey;
+	int		sizex;
 
 }	t_map;
+
+typedef struct s_image
+{
+	void	*mur;
+	void	*perso;
+}	t_image;
+
+typedef struct s_game
+{
+	int		frame;
+	int		a;
+	t_image	img;
+	t_map	map;
+	void	*mlx;
+	void	*win;
+}	t_game;
 
 char	*ft_strjoin(char *s1, char *s2);
 void	*ft_calloc(size_t count, size_t size);
