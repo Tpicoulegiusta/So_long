@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:52:12 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/25 11:07:45 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/25 11:26:50 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,6 +238,12 @@ int	run(t_game *game)
 	return (0);
 }
 
+int	mlx_loop_end(void)
+{
+	exit (0);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -257,7 +263,9 @@ int	main(int argc, char **argv)
 	game.img.ex = mlx_xpm_file_to_image(game.mlx, "ex.xpm", &game.a, &game.a);
 	mlx_loop_hook(game.mlx, run, &game);
 	mlx_hook(game.win, 2, 0, key_press, &game);
+	mlx_hook(game.win, 17, 1L << 17, mlx_loop_end, NULL);
 	mlx_loop(game.mlx);
+	
 /* 	printf("tabtab====> %s\n", value->tabtab[0]);
 	printf("tabtab====> %s\n", value->tabtab[1]);
 	printf("tabtab====> %s\n", value->tabtab[2]);
