@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 15:27:30 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/19 15:29:01 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:38:32 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ int	ft_path_finding(t_map *value)
 	int		i;
 
 	i = 0;
-	copy = malloc(sizeof(char *) * value->sizey + 1);
+	copy = malloc(sizeof(char *) * (value->sizey + 1));
 	while (i <= value->sizey)
 	{
-		ft_strdup(copy[i] = ft_strdup(value->tabtab[i]));
+		copy[i] = ft_strdup(value->tabtab[i]);
 		i++;
 	}
 	if (ft_parse_map(value, copy) != 0)
-		return (1);
-	return (0);
+		return (ft_free_copy(copy, value->sizey), 1);
+	return (ft_free_copy(copy, value->sizey), 0);
 }

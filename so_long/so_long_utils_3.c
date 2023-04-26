@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 13:40:01 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/20 09:07:54 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:40:29 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,17 @@ int	ft_check_bounds(t_map *value, int k)
 	if (ft_left_right(value, j - 1) != 0)
 		return (1);
 	return (0);
+}
+
+void	ft_free_copy(char **copy, int length)
+{
+	int	i;
+
+	i = 0;
+	while (i <= length)
+	{
+		free (copy[i]);
+		i++;
+	}
+	free(copy);
 }

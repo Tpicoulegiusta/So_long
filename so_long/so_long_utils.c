@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:47:55 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/20 08:56:59 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:28:59 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_check_args(int argc, char **argv)
 	int	i;
 
 	if (argc != 2)
-		return (write(2, "Not enough args\n", 16));
+		return (1);
 	i = ft_strlen(argv[1]) - 4;
 	while (i < ft_strlen(argv[1]))
 	{
@@ -43,14 +43,13 @@ int	ft_openfile(char **argv)
 	directory = open(argv[1], O_DIRECTORY, 0777);
 	map = open(argv[1], O_RDONLY, 0777);
 	if (directory != -1 || map == -1)
-		return (write(2, "Fd prob\n", 8));
-	//CLOSE POSSIBLE SI JAMAIS YA SOUCIS
+		return (1);
 	return (0);
 }
 
 int	ft_reduce_check(t_map *value, int k)
 {
-	if (k <= 2)
+	if (k < 2)
 		return (1);
 	if (ft_check_rectangle(value) != 0)
 		return (1);
@@ -63,26 +62,39 @@ int	ft_reduce_check(t_map *value, int k)
 	return (0);
 }
 
+char	*ft_strjoinfree2(char *stock, char *tmp)
+{
+	char	*str;
+
+	str = ft_strjoin(stock, tmp);
+	if (stock)
+		free (stock);
+	return (str);
+}
+
 int	ft_check_map(char **argv, t_map *value)
 {
 	int		map;
 	char	*tab;
 	char	*tab2;
-	int		k;
 
-	k = 0;
 	value->sizey = -1;
 	map = open(argv[1], O_RDONLY, 0777);
 	tab = get_next_line(map);
 	while (tab != '\0')
 	{
-		k++;
-		value->tabtab = ft_split(tab, '\n');
-		tab2 = get_next_line(map);
-		tab = ft_strjoin(tab, tab2);
 		value->sizey++;
+		tab2 = get_next_line(map);
+		if (!tab2)
+			break ;
+		if (tab2[0] == '\n')
+			return (1);
+		tab = ft_strjoinfree2(tab, tab2);
+		free(tab2);
 	}
-	if (ft_reduce_check(value, k) != 0)
+	value->tabtab = ft_split(tab, '\n');
+	free(tab);
+	if (ft_reduce_check(value, value->sizey) != 0)
 		return (1);
 	return (0);
 }

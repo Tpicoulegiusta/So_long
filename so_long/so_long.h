@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/24 15:51:55 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:38:58 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <stdarg.h>
 
 typedef struct s_map
 {
@@ -39,6 +40,8 @@ typedef struct s_image
 	void	*perso;
 	void	*obj;
 	void	*ex;
+	void	*f;
+	void	*f1;
 
 }	t_image;
 
@@ -81,8 +84,21 @@ int		ft_all_checks(int argc, char **argv, t_map *value);
 void	ft_virus(char **copy, int x, int y);
 int		ft_parse_map(t_map *value, char **copy);
 void	ft_virus2(char **copy, int x, int y);
-
-/* char	**ft_virus(char **tabtab2);
-void	ft_replace_x(t_map *value, char **tabtab2); */
+int		ft_printf(const char *str, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(int n);
+int		ft_putnbru(unsigned int n);
+int		ft_putnbrexa(unsigned int n);
+int		ft_putnbrexaupper(unsigned int n);
+int		ft_putnbrexap(unsigned long long n);
+int		ft_no_obj_b(t_game *game);
+void	move_left(t_game *game);
+void	move_right(t_game *game);
+void	move_top(t_game	*game);
+void	move_bot(t_game	*game);
+void	print_key(t_game *game);
+int		key_press(int key, t_game *game);
+void	ft_free_copy(char **copy, int length);
 
 #endif

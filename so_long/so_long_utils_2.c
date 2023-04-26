@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 12:23:20 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/20 09:06:56 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:43:55 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	ft_check_rectangle(t_map *value)
 
 	i = 0;
 	if (value->tabtab == NULL)
-		return (write (2, "error tabtab\n", 13));
+		return (1);
 	j = ft_strlen(value->tabtab[i]);
 	while (value->tabtab[i])
 	{
 		if (ft_strlen(value->tabtab[i]) != j)
-			return (write(2, "error not a rectangle\n", 22));
+			return (1);
 		i++;
 	}
 	value->sizex = j;

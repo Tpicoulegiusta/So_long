@@ -6,13 +6,18 @@
 #    By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/12 10:46:54 by tpicoule          #+#    #+#              #
-#    Updated: 2023/04/19 15:56:55 by tpicoule         ###   ########.fr        #
+#    Updated: 2023/04/26 17:39:44 by tpicoule         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= so_long
 
 SOURCES		= so_long.c \
+			  ft_printf.c \
+			  function.c \
+			  function2nd.c \
+			  so_long_map.c \
+			  so_long_key.c \
 			  checker_args.c \
 			  so_long_utils.c \
 			  so_long_utils_2.c \
