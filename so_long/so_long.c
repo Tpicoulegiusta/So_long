@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:52:12 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/26 18:32:20 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/27 10:50:59 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ int	run(t_game *game)
 	return (0);
 }
 
-int	mlx_loop_end(void)
+int	mlx_loop_end(t_game *game)
 {
+	mlx_destroy_window(game->mlx, game->win);
 	exit (0);
 	return (0);
 }

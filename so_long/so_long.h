@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 12:53:03 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/26 17:38:58 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:01:02 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ void	move_bot(t_game	*game);
 void	print_key(t_game *game);
 int		key_press(int key, t_game *game);
 void	ft_free_copy(char **copy, int length);
+void	ft_exit(t_game *game);
 
 #endif

@@ -6,11 +6,17 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:35:09 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/26 18:34:12 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:00:52 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_exit(t_game *game)
+{
+	mlx_destroy_window(game->mlx, game->win);
+	exit (0);
+}
 
 void	print_key(t_game *game)
 {

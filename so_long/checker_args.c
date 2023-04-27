@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 15:06:41 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/20 09:07:26 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:38:29 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	ft_all_checks(int argc, char **argv, t_map *value)
 {
 	if (ft_check_args(argc, argv) != 0)
-		return (write(2, "Wrong args\n", 11));
+		return (write(2, "Error\nWrong args\n", 17));
 	if (ft_openfile(argv) != 0)
-		return (write(2, "Bad File\n", 9));
+		return (write(2, "Error\nBad File\n", 15));
 	if (ft_check_map(argv, value) != 0)
-		return (write(2, "Map Error\n", 10));
+		return (write(2, "Error\nMap Error\n", 16));
 	if (ft_path_finding(value) != 0)
-		return (write(2, "No path\n", 8));
+		return (write(2, "Error\nNo path\n", 14));
 	return (0);
 }

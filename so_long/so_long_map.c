@@ -6,7 +6,7 @@
 /*   By: tpicoule <tpicoule@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 12:11:47 by tpicoule          #+#    #+#             */
-/*   Updated: 2023/04/26 17:31:41 by tpicoule         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:00:47 by tpicoule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	move_left(t_game *ga)
 			if (ga->map.tabtab[y][x] == 'P' && ga->map.tabtab[y][x - 1] == 'E')
 			{
 				if (ft_no_obj_b(ga) == 0)
-					exit (0);
+					ft_exit(ga);
 				else
 					return ;
 			}
@@ -75,7 +75,7 @@ void	move_right(t_game *ga)
 			if (ga->map.tabtab[y][x] == 'P' && ga->map.tabtab[y][x + 1] == 'E')
 			{
 				if (ft_no_obj_b(ga) == 0)
-					exit (0);
+					ft_exit(ga);
 				else
 					return ;
 			}
@@ -104,7 +104,7 @@ void	move_top(t_game	*ga)
 			if (ga->map.tabtab[y][x] == 'P' && ga->map.tabtab[y - 1][x] == 'E')
 			{
 				if (ft_no_obj_b(ga) == 0)
-					exit (0);
+					ft_exit(ga);
 				else
 					return ;
 			}
@@ -133,7 +133,7 @@ void	move_bot(t_game	*ga)
 			if (ga->map.tabtab[y][x] == 'P' && ga->map.tabtab[y + 1][x] == 'E')
 			{
 				if (ft_no_obj_b(ga) == 0)
-					exit (0);
+					ft_exit(ga);
 				else
 					return ;
 			}
